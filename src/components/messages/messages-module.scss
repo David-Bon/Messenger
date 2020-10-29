@@ -1,0 +1,32 @@
+.messageContainer {
+  background-color: aquamarine;
+  grid-area: mainMessages;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainText {
+  grid-area: mainText;
+}
+
+.exitButton {
+  width: 100px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.messageBody {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: lightblue;
+  width: 250px;
+border-radius: 30px;
+}
+
+.ownMessage {
+  background-color: darkgrey;
+  width: 250px;
+}
