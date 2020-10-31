@@ -1,34 +1,43 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import "./messages-module.scss"
 import classNames from 'classnames';
 
 const Messages = ({messagesData, addMessageToUser, replyMessage, userId}) => {
-
+    const dummy = useRef()
     const [inputValue, setInputValue] = useState('')
-    const sendMessage = (userId, inputValue) => {
-        const myOwnMessage = true
+    const sendMessage = (userId, inputValue, event) => {
+        event.preventDefault()
         setInputValue('')
-        addMessageToUser(userId, inputValue, myOwnMessage)
-        replyMessage(userId)
+        const myOwnMessage = true
+        function scrollDown() { dummy.current.scrollIntoView({behavior: 'smooth'})}
+        addMessageToUser(userId, inputValue, myOwnMessage, scrollDown)
+        replyMessage(userId, scrollDown)
     }
     return (
-        <div className="messageContainer">
+        <div>
+            <div className="messageContainer">
 
-            {messagesData.map((item) => {
-                return <div key={item.messId} className={classNames('messageBody', {'ownMessage': item.isOwn})}>
-                    <div>{item.messValue}</div>
-                    <div>{item.messDate}</div>
-                </div>
-            })
-            }
-            <div key={messagesData.messId} className="mainText">
-                <input type="text" value={inputValue}
+                {messagesData.map((item) => {
+                    return <div ref={dummy} key={item.messId} className={classNames('messageBody', {'ownMessage': item.isOwn})}>
+                        <div>{item.messValue}</div>
+                        <div>{item.messDate}</div>
+                    </div>
+
+                })
+                }
+
+            </div>
+            <form className="formInput">
+                <input className="textInput" value={inputValue}
                        onChange={(event => {
                            setInputValue(event.target.value)
                        })} placeholder="enter message here"/>
-                <button onClick={() => sendMessage(userId, inputValue)}>Submit</button>
-            </div>
+                <button type="submit" className="submitButton"
+                        onClick={(event) => sendMessage(userId, inputValue, event)}>(=>)
+                </button>
+            </form>
         </div>
+
     )
 }
 

@@ -2,26 +2,39 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import {compose} from "redux";
-import Messages from "./messages";
+import Messages, {scrollDown} from "./messages";
 import {Link} from "react-router-dom";
 import "./messages-module.scss"
-import {addMessageToUser, addNewMessage, replyMessage} from "../../redux/actions";
+import {addMessageToUser, replyMessage} from "../../redux/actions";
 
 class MessagesContainer extends Component {
+    // scrollToBottom = () => {
+    //     return  this.crr.current.scrollIntoView({ behavior: "smooth" });
+    // }
+    //
+
+    //
+    // componentDidUpdate() {
+    //     this.scrollToBottom();
+    // }
+
 
     render() {
         const {users, match: {params: {userId}}, addMessageToUser, replyMessage} = this.props
-
         return (
-            <div className="messContainer">
+            <div>
                 <button className="exitButton">
                     <Link to={"/login"}>Exit</Link>
                 </button>
                 {
                     users.map((user) => {
                         if (user.id === Number(userId)) {
-                            return <Messages addMessageToUser={addMessageToUser} userId={userId} replyMessage={replyMessage}
-                                             messagesData={user.messagesData}/>
+                            return (
+                                <Messages addMessageToUser={addMessageToUser} userId={userId}
+                                          replyMessage={replyMessage}
+                                          messagesData={user.messagesData}/>
+                            )
+
                         }
                     })
                 }

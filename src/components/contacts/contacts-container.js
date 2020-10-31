@@ -3,13 +3,15 @@ import {connect} from "react-redux";
 import Contacts from "./contacts";
 import {compose} from "redux";
 import {withRouter} from "react-router";
+import {ReRenderUsersList} from "../../redux/actions";
 
 class ContactsContainer extends Component {
 
 
 
     render() {
-        const {contactsList, OnDialogSet} = this.props
+        const {contactsList, OnDialogSet, ReRenderUsersList} = this.props
+        ReRenderUsersList()
         return <Contacts contactsList={contactsList}  OnDialogSet={OnDialogSet}/>
     }
 }
@@ -19,7 +21,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-
+    ReRenderUsersList
 }
 export default compose(
     withRouter,

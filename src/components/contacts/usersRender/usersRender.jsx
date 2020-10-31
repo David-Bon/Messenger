@@ -12,21 +12,22 @@ const UsersRender = (renderProp) => {
                         return messagesData[lastMessageIdx][`${property}`]
                     }
                     const lastMessage = lastUserProps('messValue');
-                    const cropUserMessages = lastMessage.length < 25 ? lastMessage : `${lastMessage.substr(0, 25)}...`;
-                    return <NavLink to={`/users/${id}`}>
-                        <div key={id} onClick={() => {
-                        }}>
-                            <div className="Contacts">
-                                <div className="UserPhoto">
+                    const lastDate = lastUserProps('messDate');
+                    const cropUserDate = lastDate.length < 13 ? lastDate : `${lastDate.substr(0, 13)}`
+                    const cropUserMessages = lastMessage.length < 25 ? lastMessage : `${lastMessage.substr(0, 35)}..`;
+                    return <NavLink className="td" to={`/users/${id}`}>
+
+                            <div className="Contacts" key={id}>
+                                <div>
                                     <img src={image} alt="not found" className="ProfilePic"/>
                                 </div>
-                                <div>
+                                <div className="UserInfo">
                                     <span className="UserName">{name}</span>
                                     <span className="LastMessage">{cropUserMessages}</span>
-                                    <span className="MessageDate">{lastUserProps('messDate')}</span>
+                                    <span className="MessageDate">{cropUserDate}</span>
                                 </div>
                             </div>
-                        </div>
+
                     </NavLink>
                 })
             }

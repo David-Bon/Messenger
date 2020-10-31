@@ -1,19 +1,45 @@
-.mainContacts {
-  grid-area: mainContacts;
+* {
+  margin: 0;
 }
 
-.ProfilePic {
-  width: 55px;
-  border-radius: 35px;
+.mainContacts {
+  grid-area: mainContacts;
+  background-color: ghostwhite;
 }
-.UserName {
-  display: block;
-}
+
 .Contacts {
-  display: flex;
-  margin: 20px 20px 20px 10px;
-cursor: pointer;
+display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  margin: 30px 10px 30px 10px;
+  cursor: pointer;
+  border-bottom: double 2px gainsboro;
 }
-.UserPhoto {
-  margin-right: 10px;
+
+.UserInfo {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 0.5fr 1fr;
+grid-template-columns: 1fr 1fr;
+}
+.ProfilePic {
+  width: 65px;
+  border-radius: 35px;
+  margin-right: 15px;
+}
+.UserName{
+  font-weight: bold;
+margin: 0;
+}
+.LastMessage{
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.MessageDate {
+grid-auto-flow: column;
+justify-self: end;
+}
+.td {
+text-decoration: none;
+  color: black;
 }

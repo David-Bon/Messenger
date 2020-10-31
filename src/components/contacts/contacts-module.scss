@@ -1,5 +1,16 @@
 .mainSP {
-  background-color: darkgoldenrod;
+  background-color: gainsboro;
   grid-area: mainSP;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
+}
+
+.searchInput {
+  border-radius: 25px;
+  width: 300px;
+  height: 30px;
+  border: none;
+  outline: none;
 }

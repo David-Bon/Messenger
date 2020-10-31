@@ -3,11 +3,11 @@ import userPhoto2 from '../assets/images/image2.jpg'
 import userPhoto3 from '../assets/images/image3.jpg'
 import userPhoto4 from '../assets/images/image4.jpg'
 import * as moment from 'moment';
-
+export const UPDATE_USER_LIST = 'UPDATE_USER_LIST';
 export const SET_FILTERED_USERS = 'SET_FILTERED_USERS';
 export const ON_MESSAGE_ADD = 'ON_MESSAGE_ADD';
 const localDate = (yyyy, mm, dd, hh, min) => {
-    return moment([yyyy, mm, dd, hh, min]).format('ll')
+    return moment().format('MMM Do YYYY, h:mm:ss a')
 }
 let initialState =
     {
@@ -100,7 +100,7 @@ let initialState =
             {
                 id: 4,
                 image: userPhoto4,
-                name: 'Christine Ferguson',
+                name: 'Christine Onana',
                 messagesData: [
                     {
                         messId: 1,
@@ -131,14 +131,18 @@ let initialState =
 export const Reducer = (state = initialState, action) => {
     switch (action.type) {
         case ON_MESSAGE_ADD:
+
 return {
     ...state, users: action.payload
 }
 
         case SET_FILTERED_USERS:
-            debugger
             return {
                 ...state, users: action.payload
+            }
+        case UPDATE_USER_LIST:
+            return {
+                ...state
             }
         default:
             return state;

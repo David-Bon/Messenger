@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
+    "firebase": "^8.0.0",
+    "firebase-admin": "^9.3.0",
     "localstorage": "^1.0.1",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
@@ -17,8 +19,10 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-scroll": "^1.8.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "scroll": "^3.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
