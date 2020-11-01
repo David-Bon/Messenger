@@ -1,28 +1,25 @@
-import React, {useRef, useState} from "react";
-import "./messages-module.scss"
+import React, {useState} from "react";
+import "./messages.scss"
 import classNames from 'classnames';
 
-const Messages = ({messagesData, addMessageToUser, replyMessage, userId}) => {
-    const dummy = useRef()
+const Messages = ({messagesData, addMessageToUser, replyMessage, userId, dummy}) => {
     const [inputValue, setInputValue] = useState('')
     const sendMessage = (userId, inputValue, event) => {
         event.preventDefault()
         setInputValue('')
         const myOwnMessage = true
-        function scrollDown() { dummy.current.scrollIntoView({behavior: 'smooth'})}
-        addMessageToUser(userId, inputValue, myOwnMessage, scrollDown)
-        replyMessage(userId, scrollDown)
+        addMessageToUser(userId, inputValue, myOwnMessage)
+        replyMessage(userId)
     }
     return (
         <div>
             <div className="messageContainer">
-
                 {messagesData.map((item) => {
-                    return <div ref={dummy} key={item.messId} className={classNames('messageBody', {'ownMessage': item.isOwn})}>
+                    return <div ref={dummy} key={item.messId}
+                                className={classNames('messageBody', {'ownMessage': item.isOwn})}>
                         <div>{item.messValue}</div>
                         <div>{item.messDate}</div>
                     </div>
-
                 })
                 }
 

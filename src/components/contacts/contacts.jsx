@@ -1,22 +1,22 @@
 import React, {useState} from "react";
-import "./contacts-module.scss"
+import "./contacts.scss"
 import UsersRender from "./usersRender/usersRender";
 
 const Contacts = ({contactsList}) => {
     let [searchValue, setSearchValue] = useState('')
     const filtered = contactsList.filter(user => user.name.toLowerCase().includes(searchValue))
-      contactsList.map((user) => {
-        const {messagesData, id} = user;
-        const lastUserProps = (property) => {
-            const lastMessageIdx = messagesData.length - 1;
-            return messagesData[lastMessageIdx][`${property}`]
-        }
-          const lastMessageIdx = messagesData.messDate.length -1;
-          if(lastUserProps('messDate')[id]>lastUserProps('messDate')[id+1]){
-         console.log(lastUserProps('messDate'))
-          }
-
-    })
+    //   contactsList.map((user) => {
+    //     const {messagesData, id} = user;
+    //     const lastUserProps = (property) => {
+    //         const lastMessageIdx = messagesData.length - 1;
+    //         return messagesData[lastMessageIdx][`${property}`]
+    //     }
+    //       const lastMessageIdx = messagesData.messDate.length -1;
+    //       if(lastUserProps('messDate')[id]>lastUserProps('messDate')[id+1]){
+    //      console.log(lastUserProps('messDate'))
+    //       }
+    //
+    // })
     return (
         <div>
             <div className="mainSP">
