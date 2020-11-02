@@ -23,7 +23,6 @@ class MessagesContainer extends Component {
 
     render() {
         const {users, match: {params: {userId}}, addMessageToUser, replyMessage, setUserProps} = this.props
-        console.log(this.props)
         return (
             <div>
                 {
