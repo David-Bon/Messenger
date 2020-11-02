@@ -3,25 +3,28 @@ import {connect} from "react-redux";
 import Contacts from "./contacts";
 import {compose} from "redux";
 import {withRouter} from "react-router";
-import {ReRenderUsersList} from "../../redux/actions";
+import {setUserProps} from "../../redux/actions";
+import {SignOut} from "../../App";
 
 class ContactsContainer extends Component {
 
-
+    reDirectToLoginPage = () => {
+        SignOut()
+        this.props.history.push("/")
+    }
 
     render() {
-        const {contactsList, OnDialogSet, ReRenderUsersList} = this.props
-        ReRenderUsersList()
-        return <Contacts contactsList={contactsList}  OnDialogSet={OnDialogSet}/>
+        const {contactsList, setUserProps} = this.props
+        return <Contacts contactsList={contactsList} reDirectToLoginPage={this.reDirectToLoginPage} setUserProps={setUserProps}/>
     }
 }
 
 const mapStateToProps = (state) => ({
-    contactsList: state.Reducer.users
+     contactsList: state.Reducer.users
 })
 
 const mapDispatchToProps = {
-    ReRenderUsersList
+    setUserProps
 }
 export default compose(
     withRouter,

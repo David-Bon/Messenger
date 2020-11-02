@@ -1,17 +1,17 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Redirect, withRouter} from "react-router";
+import {withRouter} from "react-router";
 import {compose} from "redux";
 import Messages from "./messages";
 import "./messages.scss"
-import {addMessageToUser, replyMessage} from "../../redux/actions";
-import {auth, SignOut} from "../login/login";
+import {addMessageToUser, replyMessage, setUserProps} from "../../redux/actions";
+import {SignOut} from "../../App";
 
 class MessagesContainer extends Component {
     scrollToBottom = () => {
-        return this.dummy.current.scrollIntoView({behavior: "smooth"});
+        return this.scrollDownRef.current.scrollIntoView({behavior: "smooth"});
     }
-    dummy = React.createRef()
+    scrollDownRef = React.createRef()
 
     componentDidMount() {
         this.scrollToBottom();
@@ -21,19 +21,24 @@ class MessagesContainer extends Component {
         this.scrollToBottom();
     }
 
-
     render() {
-        const {users, match: {params: {userId}}, addMessageToUser, replyMessage} = this.props
+        const {users, match: {params: {userId}}, addMessageToUser, replyMessage, setUserProps} = this.props
         console.log(this.props)
         return (
             <div>
-                <button onClick={()=>SignOut()} className="exitButton">Sign out</button>
                 {
                     users.map((user) => {
                         if (user.id === Number(userId)) {
+                            const {messagesData} = user;
                             return (
-                                <Messages addMessageToUser={addMessageToUser} dummy={this.dummy} userId={userId}
-                                          replyMessage={replyMessage} messagesData={user.messagesData}/>
+                                <Messages
+                                    addMessageToUser={addMessageToUser}
+                                    scrollDownRef={this.scrollDownRef}
+                                    userId={userId}
+                                    replyMessage={replyMessage}
+                                    messagesData={messagesData}
+                                    setUserProps={setUserProps}
+                                />
                             )
 
                         }
@@ -52,7 +57,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     replyMessage,
     addMessageToUser,
-    auth,
+    setUserProps,
 }
 
 export default compose(

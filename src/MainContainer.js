@@ -3,8 +3,9 @@ import MessagesContainer from "./components/messages/messages-container";
 import {Redirect, Route} from "react-router";
 import React from "react";
 import './App.css';
-const MainContainer = () => {
 
+
+const MainContainer = () => {
     return (
         <div className="App">
             <Redirect to={"/users"}/>

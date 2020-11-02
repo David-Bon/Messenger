@@ -8,9 +8,9 @@
 }
 
 .Contacts {
-display: grid;
+  display: grid;
   grid-template-columns: 0.2fr 1fr;
-  margin: 30px 10px 30px 10px;
+  padding: 30px 10px 0 10px;
   cursor: pointer;
   border-bottom: double 2px gainsboro;
 }
@@ -19,27 +19,51 @@ display: grid;
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: 0.5fr 1fr;
-grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100px;
 }
+
 .ProfilePic {
   width: 65px;
   border-radius: 35px;
   margin-right: 15px;
 }
-.UserName{
+
+.UserName {
   font-weight: bold;
-margin: 0;
+  margin: 0;
 }
-.LastMessage{
+
+.LastMessage {
   grid-row-start: 2;
   grid-column-start: 1;
   grid-column-end: 3;
 }
+
 .MessageDate {
-grid-auto-flow: column;
-justify-self: end;
+  grid-auto-flow: column;
+  justify-self: end;
 }
+
 .td {
-text-decoration: none;
+  text-decoration: none;
   color: black;
+}
+
+.displayMessageCount {
+  display: none;
+
+}
+
+.viewMessageCount {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: steelblue;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+  top: 55px;
+  right: 0;
 }
