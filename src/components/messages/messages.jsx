@@ -48,7 +48,7 @@ const Messages = ({messagesData, addMessageToUser, replyMessage, userId, scrollD
                 <button type="submit" className="submitButton"
                         onClick={(event) => {
                             sendMessage(userId, inputValue, event)
-                        }}>(=>)
+                        }}>=>
                 </button>
             </form>
         </div>

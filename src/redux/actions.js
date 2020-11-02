@@ -26,7 +26,7 @@ export const replyMessage = (id, isNewMessage) => (dispatch) => {
                 dispatch(setUserProps(id, time, "lastMessageTime", moment(time).valueOf()))
                 dispatch(setUserProps(id, time, "newMessageNotification", isNewMessage))
             })
-    }, 6000)
+    }, 10000)
 }
 
 export const addMessageToUser = (id, message, isOwner, time) => (dispatch, getStore) => {

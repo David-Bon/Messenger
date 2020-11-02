@@ -49,20 +49,19 @@ let initialState =
                 messagesData: [
                     {
                         isOwn: null,
-                        messValue: 'asdas!',
+                        messValue: 'China rules!',
                         messDate: localDate(2017, 2, 26, 17, 11)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'how`wa it gawdoing?',
+                        messValue: 'Zhong Ming dynasty forever!',
                         messDate: localDate(2017, 2, 26, 18, 28)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi\n' +
-                            '\n!',
+                        messValue: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi!',
                         messDate: localDate(2017, 2, 26, 18, 50)
                     },
                 ],
@@ -77,19 +76,19 @@ let initialState =
                 messagesData: [
                     {
                         isOwn: null,
-                        messValue: 'lorem*10',
+                        messValue: 'Guys, your test tasks is too hard for trainee',
                         messDate: localDate(2015, 5, 26, 17, 11)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'sdklfjdf lskdjgskdlf kjdh?',
+                        messValue: 'anyway it was great experience',
                         messDate: localDate(2015, 5, 26, 17, 11)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'sdf`t dasf sdf asdf s!',
+                        messValue: 'ill wait for your callback',
                         messDate: localDate(2015, 5, 26, 17, 11)
                     },
                 ],
@@ -104,19 +103,19 @@ let initialState =
                 messagesData: [
                     {
                         isOwn: null,
-                        messValue: 'Hasdasdre!',
+                        messValue: 'Good morning mr.president!',
                         messDate: localDate(2015, 1, 26, 17, 11)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'haghbbing?',
+                        messValue: 'your declaration is ready?',
                         messDate: localDate(2015, 1, 26, 17, 11)
                     },
 
                     {
                         isOwn: null,
-                        messValue: 'cdsgeyou!',
+                        messValue: 'you have to speed up!',
                         messDate: localDate(2015, 1, 26, 17, 11)
                     },
                 ],

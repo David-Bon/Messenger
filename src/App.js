@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './App.scss';
 import MainContainer from "./MainContainer";
 import firebase from "firebase/app";
 import 'firebase/auth';
@@ -20,13 +20,11 @@ if (!firebase.apps.length) {
 
 const auth = firebase.auth();
 
-
 export function SignOut() {
     return auth.currentUser && (
         auth.signOut()
     )
 }
-
 
 const LoginPage = () => {
     function SignIn() {
@@ -47,7 +45,7 @@ const LoginPage = () => {
                 </div>
 
             </div>
-                   )
+        )
     }
 
     return (
@@ -58,7 +56,7 @@ const LoginPage = () => {
 const App = () => {
     const [userInfo] = useAuthState(auth)
     return (
-        userInfo ? <MainContainer/> : LoginPage()
+         userInfo ? <MainContainer/> : LoginPage()
     )
 }
 export default App;
