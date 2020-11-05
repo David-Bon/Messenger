@@ -4,7 +4,7 @@ import Contacts from "./contacts";
 import {compose} from "redux";
 import {withRouter} from "react-router";
 import {setUserProps} from "../../redux/actions";
-import {SignOut} from "../../App";
+import {SignOut} from "../../firebase";
 
 class ContactsContainer extends Component {
 

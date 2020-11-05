@@ -2,7 +2,7 @@ import ContactsContainer from "./components/contacts/contacts-container";
 import MessagesContainer from "./components/messages/messages-container";
 import {Redirect, Route} from "react-router";
 import React from "react";
-import './App.scss';
+import './App.css';
 
 
 const MainContainer = () => {

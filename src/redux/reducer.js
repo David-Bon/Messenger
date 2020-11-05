@@ -121,6 +121,7 @@ let initialState =
                 ],
             },
         ],
+        isAuth: false,
     };
 
 
